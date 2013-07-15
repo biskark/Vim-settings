@@ -22,7 +22,7 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap H ^
 nnoremap L $
-" }}}
+}}}
 
 " Basic Settings ----------------------- " {{{
 syntax on
@@ -65,7 +65,7 @@ set noshowmode
 
 set wildmenu
 set wildmode=list:longest,full
-" }}}
+}}}
 
 " FileType Settings -------------------- " {{{
 augroup filetype_js
@@ -103,7 +103,7 @@ augroup filetype_vim"
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
 augroup END"
-" }}}
+}}}
 
 " Plugin Settings ------------------------ " {{{
 set laststatus=2
@@ -143,7 +143,7 @@ let OmniCPP_MayCompleteDot = 1
 let OmniCPP_MayCompleteArrow = 1
 let OmniCPP_MayCompleteScope = 1
 let OmniCPP_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
-" }}}
+}}}
 
 " Plugin Key Mappings --------------------- " {{{
 cnoremap tree<cr>  NERDTreeToggle<cr>
@@ -158,8 +158,8 @@ cnoremap lynx<cr> ConqueTermSplit lynx<cr>
 cnoremap vgoogle<cr> ConqueTermVSplit lynx google<cr>
 cnoremap google<cr> ConqueTermSplit lynx google<cr>
 
-" }}}
+}}}
 
 " Other Settings -------------------- " {{{
 colorscheme wombat256mod
-" }}}
+}}}
