@@ -1,4 +1,4 @@
-" Basic Key Mappings -------------------- {{{
+" Basic Key Mappings -------------------- " {{{
 noremap ; :
 noremap : ;
 
@@ -22,9 +22,9 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap H ^
 nnoremap L $
-" }}}
+" " }}}
 
-" Basic Settings ----------------------- {{{
+" Basic Settings ----------------------- " {{{
 syntax on
 filetype on
 filetype plugin on
@@ -32,7 +32,7 @@ filetype plugin indent on
 execute pathogen#infect()
 
 set background=dark
-set wrap
+set nowrap
 set autoindent
 set number
 set smarttab
@@ -65,9 +65,9 @@ set noshowmode
 
 set wildmenu
 set wildmode=list:longest,full
-" }}}
+" " }}}
 
-" FileType Settings -------------------- {{{
+" FileType Settings -------------------- " {{{
 augroup filetype_js
     autocmd!
     autocmd BufRead,BufNewFile *.js set ft=javascript syntax=jquery
@@ -103,9 +103,9 @@ augroup filetype_vim"
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
 augroup END"
-" }}}
+" " }}}
 
-" Plugin Settings ------------------------ {{{
+" Plugin Settings ------------------------ " {{{
 set laststatus=2
 let g:tagbar_left  = 1
 let g:tagbar_width = 25 
@@ -143,9 +143,9 @@ let OmniCPP_MayCompleteDot = 1
 let OmniCPP_MayCompleteArrow = 1
 let OmniCPP_MayCompleteScope = 1
 let OmniCPP_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
-" }}}
+" " }}}
 
-" Plugin Key Mappings --------------------- {{{
+" Plugin Key Mappings --------------------- " {{{
 cnoremap tree<cr>  NERDTreeToggle<cr>
 cnoremap tag<cr>   TagbarToggle<cr>
 cnoremap pause<cr> TagbarTogglePause<cr>
@@ -158,8 +158,8 @@ cnoremap lynx<cr> ConqueTermSplit lynx<cr>
 cnoremap vgoogle<cr> ConqueTermVSplit lynx google<cr>
 cnoremap google<cr> ConqueTermSplit lynx google<cr>
 
-" }}}
+" " }}}
 
-" Other Settings -------------------- {{{
+" Other Settings -------------------- " {{{
 colorscheme wombat256mod
-" }}}
+" " }}}
