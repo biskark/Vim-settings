@@ -10,12 +10,7 @@ Installation
 ------------
 `$ cp Vim-settings/.vimrc ~/.vimrc`
 
-Notes
------
-This vimrc has setting for various plugins that may not apply to you if you
-don't use those plugins.
-
-Plugin List
+Plugins I Use
 -----------
 
 * a.vim
@@ -45,3 +40,8 @@ Plugin List
 * vim-ruby
 * vim-snippets
 * vim-surround
+
+Notes
+-----
+This vimrc has setting for various plugins that may not apply to you if you
+don't use them.
