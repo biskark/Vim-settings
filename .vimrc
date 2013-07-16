@@ -81,17 +81,17 @@ augroup END
 
 augroup filetype_html
     autocmd!
-    au FileType html set tabstop=2
-    au FileType html set softtabstop=2
-    au FileType html set shiftwidth=2
-    au FileType htmldjango set tabstop=2
-    au FileType htmldjango set softtabstop=2
-    au FileType htmldjango set shiftwidth=2
+    autocmd FileType html set tabstop=2
+    autocmd FileType html set softtabstop=2
+    autocmd FileType html set shiftwidth=2
+    autocmd FileType htmldjango set tabstop=2
+    autocmd FileType htmldjango set softtabstop=2
+    autocmd FileType htmldjango set shiftwidth=2
 augroup END
 
 augroup filetype_qtstyle
-    au BufRead,BufNewFile *.qss set ft=css syntax=css
-    au BufRead,BufNewFile *.qrc set ft=xml syntax=xml
+    autocmd BufRead,BufNewFile *.qss set ft=css syntax=css
+    autocmd BufRead,BufNewFile *.qrc set ft=xml syntax=xml
 augroup END
 
 augroup filetype_cpp
@@ -103,13 +103,18 @@ augroup filetype_vim"
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
 augroup END"
+
+augroup filetype_markdown"
+    autocmd!
+    autocmd BufRead,BufNewFile *.md set ft=markdown
+augroup END
 " }}}
 
 " Plugin Settings ------------------------ " {{{
 set laststatus=2
 let g:tagbar_left  = 1
 let g:tagbar_width = 25 
-set rtp+=/home/kevin/.local/lib/python2.7/site-packages/powerline/bindings/vim
+set rtp+=/home/Kevin/.local/lib/python2.7/site-packages/powerline/bindings/vim
 let g:Powerline_symbols = 'fancy'
 
 let g:UltiSnipsUsePythonVersion = 2
