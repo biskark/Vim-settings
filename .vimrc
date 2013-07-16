@@ -6,12 +6,12 @@ inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
-nnoremap  <C-h> <C-w>h
-nnoremap  <C-j> <C-w>j
-nnoremap  <C-k> <C-w>k
-nnoremap  <C-l> <C-w>l
-nnoremap  + <C-w>+
-nnoremap  _ <C-w>-
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nnoremap + <C-w>+
+nnoremap _ <C-w>-
 nnoremap Y y$
 
 nnoremap j gj
@@ -20,8 +20,8 @@ inoremap <c-f> <c-x><c-f>
 inoremap <c-g> <space><bs>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
-nnoremap H ^
-nnoremap L $
+noremap H ^
+noremap L $
 " }}}
 
 " Basic Settings ----------------------- " {{{
@@ -106,7 +106,7 @@ augroup END
 
 augroup filetype_markdown
     autocmd!
-    autocmd BufRead,BufNewFile *.md set ft=markdown
+    autocmd BufRead,BufNewFile *.md set ft=markdown syntax=markdown
 augroup END
 " }}}
 
