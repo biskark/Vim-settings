@@ -99,12 +99,12 @@ augroup filetype_cpp
     autocmd FileType cpp set tags+=~/.vim/tags/qt4
 augroup END
 
-augroup filetype_vim"
+augroup filetype_vim
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
 augroup END"
 
-augroup filetype_markdown"
+augroup filetype_markdown
     autocmd!
     autocmd BufRead,BufNewFile *.md set ft=markdown
 augroup END
