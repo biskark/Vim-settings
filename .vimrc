@@ -102,7 +102,7 @@ augroup END
 augroup filetype_vim
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
-augroup END"
+augroup END
 
 augroup filetype_markdown
     autocmd!
