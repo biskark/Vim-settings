@@ -6,22 +6,40 @@ inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-nnoremap + <C-w>+
-nnoremap _ <C-w>-
+nnoremap  <C-h> <C-w>h
+nnoremap  <C-j> <C-w>j
+nnoremap  <C-k> <C-w>k
+nnoremap  <C-l> <C-w>l
+nnoremap  + <C-w>+
+nnoremap  _ <C-w>-
 nnoremap Y y$
 
 nnoremap j gj
 nnoremap k gk
 inoremap <c-f> <c-x><c-f>
-inoremap <c-g> <space><bs>
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
+inoremap <c-g> <space><bs>  " for use after <c-f> to continue the match"
+nnoremap <silent> <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <silent> <leader>sv :source $MYVIMRC<cr>
 noremap H ^
 noremap L $
+
+" Append semi-colon to line;
+nnoremap <silent> <leader>ss mqA;<esc>`q
+vnoremap <silent> <leader>ss mq:s/$/;/<cr>`q
+" Append colon to line;
+nnoremap <silent> <leader>cc mqA:<esc>`q
+vnoremap <silent> <leader>cc mq:s/$/:/<cr>`q
+" Append { to line;
+nnoremap <silent> <leader>{{ mqA {<esc>`q
+vnoremap <silent> <leader>{{ mq:s/$/ {/<cr>`q
+
+" Match trailing whitespace or turn off match
+nnoremap <leader>w mq :match Error /\v\s+$/<cr>`q
+nnoremap <leader>W mq :match Error //<cr>`q
+
+" Erase match
+nnoremap <silent> <leader>h :noh<cr>
+
 " }}}
 
 " Basic Settings ----------------------- " {{{
@@ -42,6 +60,8 @@ set shiftwidth=4
 set expandtab
 set backspace=indent,eol,start
 set ofu=syntaxcomplete#Complete
+set hlsearch
+set incsearch
 
 set tags=tags;/
 set cc=80
@@ -70,43 +90,40 @@ set wildmode=list:longest,full
 " FileType Settings -------------------- " {{{
 augroup filetype_js
     autocmd!
-    autocmd BufRead,BufNewFile *.js set ft=javascript syntax=jquery
+    autocmd BufEnter *.js silent setlocal ft=javascript syntax=jquery
 augroup END
 
 augroup filetype_python
     autocmd!
-    autocmd FileType python set tags=~/.vim/tags/python
-    autocmd FileType python set omnifunc=pythoncomplete#Complete
+    autocmd BufEnter *.py silent setlocal tags+=~/.vim/tags/python
+    autocmd BufEnter *.py silent setlocal omnifunc=pythoncomplete#Complete
 augroup END
 
 augroup filetype_html
     autocmd!
-    autocmd FileType html set tabstop=2
-    autocmd FileType html set softtabstop=2
-    autocmd FileType html set shiftwidth=2
-    autocmd FileType htmldjango set tabstop=2
-    autocmd FileType htmldjango set softtabstop=2
-    autocmd FileType htmldjango set shiftwidth=2
+    autocmd BufEnter *.html silent setlocal tabstop=2
+    autocmd BufEnter *.html silent setlocal softtabstop=2
+    autocmd BufEnter *.html silent setlocal shiftwidth=2
 augroup END
 
 augroup filetype_qtstyle
-    autocmd BufRead,BufNewFile *.qss set ft=css syntax=css
-    autocmd BufRead,BufNewFile *.qrc set ft=xml syntax=xml
+    autocmd BufEnter *.qss silent setlocal ft=css syntax=css
+    autocmd BufEnter *.qrc silent setlocal ft=xml syntax=xml
 augroup END
 
 augroup filetype_cpp
     autocmd!
-    autocmd FileType cpp set tags+=~/.vim/tags/qt4
+    autocmd BufEnter * if &ft==# 'cpp' | silent setlocal tags+=~/.vim/tags/qt4 | endif
 augroup END
 
 augroup filetype_vim
     autocmd!
-    autocmd FileType vim setlocal foldmethod=marker
+    autocmd BufEnter * if &ft==# 'vim' | silent setlocal foldmethod=marker | else | silent setlocal foldmethod=indent | endif
 augroup END
 
 augroup filetype_markdown
     autocmd!
-    autocmd BufRead,BufNewFile *.md set ft=markdown syntax=markdown
+    autocmd BufEnter *.md silent setlocal ft=markdown
 augroup END
 " }}}
 
@@ -151,20 +168,20 @@ let OmniCPP_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 " }}}
 
 " Plugin Key Mappings --------------------- " {{{
-cnoremap tree<cr>  NERDTreeToggle<cr>
-cnoremap tag<cr>   TagbarToggle<cr>
-cnoremap pause<cr> TagbarTogglePause<cr>
-cnoremap buf<cr> TMiniBufExplorer<cr>
+cnoremap <silent> tree<cr>  NERDTreeToggle<cr>
+cnoremap <silent> tag<cr>   TagbarToggle<cr>
+cnoremap <silent> pause<cr> TagbarTogglePause<cr>
+cnoremap <silent> buf<cr> TMiniBufExplorer<cr>
 
-cnoremap vbash<cr> ConqueTermVSplit bash<cr>
-cnoremap bash<cr> ConqueTermSplit bash<cr>
-cnoremap vlynx<cr> ConqueTermVSplit lynx<cr>
-cnoremap lynx<cr> ConqueTermSplit lynx<cr>
-cnoremap vgoogle<cr> ConqueTermVSplit lynx google<cr>
-cnoremap google<cr> ConqueTermSplit lynx google<cr>
+cnoremap <silent> vbash<cr> ConqueTermVSplit bash<cr>
+cnoremap <silent> bash<cr> ConqueTermSplit bash<cr>
+cnoremap <silent> vlynx<cr> ConqueTermVSplit lynx<cr>
+cnoremap <silent> lynx<cr> ConqueTermSplit lynx<cr>
+cnoremap <silent> vgoogle<cr> ConqueTermVSplit lynx google<cr>
+cnoremap <silent> google<cr> ConqueTermSplit lynx google<cr>
 
-" }}}
+" }}}   
 
 " Other Settings -------------------- " {{{
-colorscheme wombat256mod
-" }}}
+colorscheme wombat256modKevin
+" }}}   
