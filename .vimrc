@@ -40,7 +40,11 @@ nnoremap <leader>W mq :match Error //<cr>`q
 " Erase match
 nnoremap <silent> <leader>h :noh<cr>
 
-" }}}
+" Quickfix window
+nnoremap <silent> <leader>co :copen<cr>
+nnoremap <silent> <leader>cc :cclose<cr>
+
+" " }}}
 
 " Basic Settings ----------------------- " {{{
 syntax on
@@ -85,7 +89,7 @@ set noshowmode
 
 set wildmenu
 set wildmode=list:longest,full
-" }}}
+" " }}}
 
 " FileType Settings -------------------- " {{{
 augroup filetype_js
