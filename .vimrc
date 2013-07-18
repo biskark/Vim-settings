@@ -131,7 +131,6 @@ augroup END
 set laststatus=2
 let g:tagbar_left  = 1
 let g:tagbar_width = 25 
-set rtp+=/home/Kevin/.local/lib/python2.7/site-packages/powerline/bindings/vim
 let g:Powerline_symbols = 'fancy'
 
 let g:UltiSnipsUsePythonVersion = 2
