@@ -34,7 +34,9 @@ Plugins I Use
 * vim-colorschemes
 * vim-commentary
 * vim-css-color
+* vim-flavored-markdown
 * vim-fugitive
+* vim-markdown
 * vim-perl
 * vim-powerline
 * vim-ruby

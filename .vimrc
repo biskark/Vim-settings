@@ -120,11 +120,6 @@ augroup filetype_vim
     autocmd!
     autocmd BufEnter * if &ft==# 'vim' | silent setlocal foldmethod=marker | else | silent setlocal foldmethod=indent | endif
 augroup END
-
-augroup filetype_markdown
-    autocmd!
-    autocmd BufEnter *.md silent setlocal ft=markdown
-augroup END
 " }}}
 
 " Plugin Settings ------------------------ " {{{
