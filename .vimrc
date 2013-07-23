@@ -40,10 +40,6 @@ nnoremap <leader>W mq :match Error //<cr>`q
 " Erase match
 nnoremap <silent> <leader>h :noh<cr>
 
-" Quickfix window
-nnoremap <silent> <leader>co :copen<cr>
-nnoremap <silent> <leader>cc :cclose<cr>
-
 " }}}
 
 " Basic Settings ----------------------- " {{{
@@ -51,7 +47,6 @@ syntax on
 filetype on
 filetype plugin on
 filetype plugin indent on
-execute pathogen#infect()
 
 set background=dark
 set nowrap
@@ -122,11 +117,12 @@ augroup END
 
 augroup filetype_vim
     autocmd!
-    autocmd BufEnter * if &ft==# 'vim' | silent setlocal foldmethod=marker | else | silent setlocal foldmethod=indent | endif
+    autocmd BufEnter * if &ft==# 'vim' | silent setlocal foldmethod=marker | endif
 augroup END
 " }}}
 
 " Plugin Settings ------------------------ " {{{
+execute pathogen#infect()
 set laststatus=2
 let g:tagbar_left  = 1
 let g:tagbar_width = 25 
