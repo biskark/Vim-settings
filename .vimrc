@@ -81,6 +81,7 @@ set completeopt+=longest,menuone
 set noswapfile
 set backupdir+=~/.vim/backup
 set noshowmode
+set scrolloff=2
 
 set wildmenu
 set wildmode=list:longest,full
