@@ -124,6 +124,8 @@ augroup END
 
 " Plugin Settings ------------------------ " {{{
 execute pathogen#infect()
+let g:neocomplcache_enable_at_startup = 1
+
 set laststatus=2
 let g:tagbar_left  = 1
 let g:tagbar_width = 25 
@@ -178,5 +180,4 @@ cnoremap <silent> google<cr> ConqueTermSplit lynx google<cr>
 " }}}   
 
 " Other Settings -------------------- " {{{
-colorscheme wombat256modKevin
 " }}}   
