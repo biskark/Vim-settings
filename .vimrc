@@ -1,48 +1,5 @@
-" Basic Key Mappings -------------------- " {{{
-noremap ; :
-noremap : ;
-
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-nnoremap  <C-h> <C-w>h
-nnoremap  <C-j> <C-w>j
-nnoremap  <C-k> <C-w>k
-nnoremap  <C-l> <C-w>l
-nnoremap  + <C-w>+
-nnoremap  _ <C-w>-
-nnoremap Y y$
-
-nnoremap j gj
-nnoremap k gk
-inoremap <c-f> <c-x><c-f>
-inoremap <c-g> <space><bs>  " for use after <c-f> to continue the match"
-nnoremap <silent> <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <silent> <leader>sv :source $MYVIMRC<cr>
-noremap H ^
-noremap L $
-
-" Append semi-colon to line;
-nnoremap <silent> <leader>ss mqA;<esc>`q
-vnoremap <silent> <leader>ss mq:s/$/;/<cr>`q
-" Append colon to line;
-nnoremap <silent> <leader>cc mqA:<esc>`q
-vnoremap <silent> <leader>cc mq:s/$/:/<cr>`q
-" Append { to line;
-nnoremap <silent> <leader>{{ mqA {<esc>`q
-vnoremap <silent> <leader>{{ mq:s/$/ {/<cr>`q
-
-" Match trailing whitespace or turn off match
-nnoremap <leader>w mq :match Error /\v\s+$/<cr>`q
-nnoremap <leader>W mq :match Error //<cr>`q
-
-" Erase match
-nnoremap <silent> <leader>h :noh<cr>
-
-" }}}
-
 " Basic Settings ----------------------- " {{{
+set nocompatible
 syntax on
 filetype on
 filetype plugin on
@@ -86,6 +43,50 @@ set scrolloff=2
 
 set wildmenu
 set wildmode=list:longest,full
+" }}}
+
+" Basic Key Mappings -------------------- " {{{
+noremap ; :
+noremap : ;
+
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+nnoremap  <C-h> <C-w>h
+nnoremap  <C-j> <C-w>j
+nnoremap  <C-k> <C-w>k
+nnoremap  <C-l> <C-w>l
+nnoremap  + <C-w>+
+nnoremap  _ <C-w>-
+nnoremap Y y$
+
+nnoremap j gj
+nnoremap k gk
+inoremap <c-f> <c-x><c-f>
+inoremap <c-g> <space><bs>  " for use after <c-f> to continue the match"
+nnoremap <silent> <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <silent> <leader>sv :source $MYVIMRC<cr>
+noremap H ^
+noremap L $
+
+" Append semi-colon to line;
+nnoremap <silent> <leader>ss mqA;<esc>`q
+vnoremap <silent> <leader>ss mq:s/$/;/<cr>`q
+" Append colon to line;
+nnoremap <silent> <leader>cc mqA:<esc>`q
+vnoremap <silent> <leader>cc mq:s/$/:/<cr>`q
+" Append { to line;
+nnoremap <silent> <leader>{{ mqA {<esc>`q
+vnoremap <silent> <leader>{{ mq:s/$/ {/<cr>`q
+
+" Match trailing whitespace or turn off match
+nnoremap <leader>w mq :match Error /\v\s+$/<cr>`q
+nnoremap <leader>W mq :match Error //<cr>`q
+
+" Erase match
+nnoremap <silent> <leader>h :noh<cr>
+
 " }}}
 
 " FileType Settings -------------------- " {{{
