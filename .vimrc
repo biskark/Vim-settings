@@ -61,6 +61,7 @@ set backspace=indent,eol,start
 set ofu=syntaxcomplete#Complete
 set hlsearch
 set incsearch
+set modeline
 
 set tags=tags;/
 set cc=80
@@ -124,6 +125,8 @@ augroup END
 
 " Plugin Settings ------------------------ " {{{
 execute pathogen#infect()
+execute pathogen#helptags()
+
 let g:neocomplcache_enable_at_startup = 1
 
 set laststatus=2
