@@ -169,8 +169,8 @@ let OmniCPP_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 " }}}
 
 " Plugin Key Mappings --------------------- " {{{
-cnoremap <silent> tree<cr>  NERDTreeToggle<cr>
-cnoremap <silent> tag<cr>   TagbarToggle<cr>
+cnoremap <silent> tree<cr> NERDTreeToggle<cr>
+cnoremap <silent> tag<cr> TagbarToggle<cr>
 cnoremap <silent> pause<cr> TagbarTogglePause<cr>
 cnoremap <silent> buf<cr> TMiniBufExplorer<cr>
 
@@ -180,6 +180,19 @@ cnoremap <silent> vlynx<cr> ConqueTermVSplit lynx<cr>
 cnoremap <silent> lynx<cr> ConqueTermSplit lynx<cr>
 cnoremap <silent> vgoogle<cr> ConqueTermVSplit lynx google<cr>
 cnoremap <silent> google<cr> ConqueTermSplit lynx google<cr>
+
+" Setting to automatically open a markdown file in rendered html.
+" Must have grip and conqueterm installed
+cnoremap <silent> grip<cr> call <SID>Grip()<cr>
+
+" Function that calls grip on the current file, opens up firefox, and returns.
+" Odd problem in that it returns to insert mode afterwards.
+function! s:Grip()
+    execute ':ConqueTermSplit grip ' . expand("%")
+    sleep 1
+    execute ':! firefox localhost:5000'
+    execute ':q'
+endfunction
 
 " }}}   
 
