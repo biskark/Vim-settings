@@ -101,6 +101,13 @@ augroup filetype_python
     autocmd BufEnter *.py silent setlocal omnifunc=pythoncomplete#Complete
 augroup END
 
+augroup filetype_java
+    autocmd!
+    autocmd BufEnter * if &ft==# 'java' | silent setlocal tags+=~/.vim/tags/java | endif
+    autocmd BufEnter * if &ft==# 'java' | silent setlocal omnifunc=javacomplete#Complete | endif
+    autocmd BufEnter * if &ft==# 'java' | silent setlocal completefunc=javacomplete#CompleteParamsInfo | endif
+augroup END
+
 augroup filetype_html
     autocmd!
     autocmd BufEnter *.html silent setlocal tabstop=2
