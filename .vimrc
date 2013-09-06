@@ -141,6 +141,7 @@ set laststatus=2
 let g:tagbar_left  = 1
 let g:tagbar_width = 25 
 let g:Powerline_symbols = 'fancy'
+" let g:Powerline_colorscheme = 'solarized256'
 
 let g:UltiSnipsUsePythonVersion = 2
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -161,6 +162,10 @@ let g:ConqueTerm_TERM = 'xterm'
 let g:ConqueTerm_PyVersion = 2
 
 let g:pymode_lint_cwindow = 0
+
+" Vim-Ultimate-Colorscheme-Utility
+let g:ulti_color_always_random = 2
+let g:ulti_color_excluded = ['minibufexpl', 'help', 'nerdtree', 'tagbar']
 
 "Syntastic and Qt
 let g:syntastic_check_on_open=1
