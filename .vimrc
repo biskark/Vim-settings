@@ -143,6 +143,10 @@ let g:tagbar_width = 25
 let g:Powerline_symbols = 'fancy'
 " let g:Powerline_colorscheme = 'solarized256'
 
+if !has('gui_running')
+    let g:solarized_termcolors=256
+endif
+
 let g:UltiSnipsUsePythonVersion = 2
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
