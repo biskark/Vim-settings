@@ -168,16 +168,18 @@ let g:ulti_color_always_random = 2
 let g:ulti_color_excluded = ['minibufexpl', 'help', 'nerdtree', 'tagbar']
 
 "Syntastic and Qt
+let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=1
 let g:syntastic_cpp_include_dirs = ['/usr/include/qt4/', '/usr/include/qt4/QtCore/', '/usr/include/qt4/Qt/', '/usr/include/qt4/QtGui/', '/usr/include/qt4/QtUiTools/']
+let g:syntastic_cpp_check_header = 1
+let g:syntastic_cpp_compiler_options = ' -std=c++0x'
 
-let OmniCPP_NamespaceSearch = 1
+let OmniCPP_NamespaceSearch = 2
 let OmniCPP_GlobalScopeSearch = 1
 let OmniCPP_ShowAccess = 1
 let OmniCPP_MayCompleteDot = 1
 let OmniCPP_MayCompleteArrow = 1
 let OmniCPP_MayCompleteScope = 1
-let OmniCPP_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 " }}}
 
 " Plugin Key Mappings --------------------- " {{{
