@@ -1,4 +1,5 @@
 " Basic Settings ----------------------- " {{{
+set guioptions-=T
 set nocompatible
 syntax on
 filetype on
