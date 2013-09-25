@@ -2,7 +2,7 @@ Installation
 ------------
 
 ```bash
-$ git clone https://github.com/biskark/Biskar-Vimrc-and-Plugins temp/
+$ git clone https://github.com/biskark/Vim-settings temp/
 $ mv temp/* .
 $ mv temp/.git* .
 $ mv temp/.vim* .
