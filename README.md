@@ -6,7 +6,7 @@ $ git clone https://github.com/biskark/Vim-settings temp/
 $ mv temp/* .
 $ mv temp/.git* .
 $ mv temp/.vim* .
-$ rm -rf temp
+$ rmdir temp
 
 $ git submodule init
 $ git submodule update
