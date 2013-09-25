@@ -2,9 +2,6 @@
 set guioptions-=T
 set nocompatible
 syntax on
-filetype on
-filetype plugin on
-filetype plugin indent on
 
 set nowrap
 set autoindent
@@ -131,10 +128,89 @@ augroup filetype_vim
 augroup END
 " }}}
 
-" Plugin Settings ------------------------ " {{{
-execute pathogen#infect()
-execute pathogen#helptags()
+" Vundle Setting {{{
+filetype off
 
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
+Bundle 'vim-scripts/a.vim'
+" Switch between header and source
+Bundle 'viklund/bio-vim'
+" Fasta etc.. syntax highlighting
+
+Bundle 'noahfrederick/vim-hemisu'
+" Colorscheme
+Bundle 'vim-scripts/javacomplete'
+" Omnicomplete for Java
+Bundle 'fholgado/minibufexpl.vim'
+" Buffer menu
+Bundle 'Shougo/neocomplcache.vim'
+" Better Completion
+Bundle 'scrooloose/nerdtree'
+" Filesystem browser
+Bundle 'vim-scripts/OmniCppComplete'
+" Omnicomplete for C++
+Bundle 'fs111/pydoc.vim'
+" Python doc in vim
+Bundle 'klen/python-mode'
+" Python code help
+Bundle 'ervandew/supertab'
+" Tab completion
+Bundle 'scrooloose/syntastic'
+" Syntax checking upgrade
+Bundle 'majutsushi/tagbar'
+" Tag tree
+Bundle 'vim-scripts/tlib'
+" Utility functions
+Bundle 'MarcWeber/vim-addon-mw-utils'
+" More Utility functions
+Bundle 'vim-scripts/VimClojure'
+" Clojure filetype stuff
+Bundle 'flazz/vim-colorschemes'
+" Colors!
+Bundle 'tpope/vim-commentary'
+" Easy commenting
+Bundle 'skammer/vim-css-color'
+" Shows colors from rgb values
+Bundle 'jtratner/vim-flavored-markdown'
+" Markdown syntax
+Bundle 'tpope/vim-fugitive'
+" Git stuff
+Bundle 'tpope/vim-markdown'
+" More Markdown
+Bundle 'vim-perl/vim-perl'
+" Perl stuff
+Bundle 'Lokaltog/vim-powerline'
+" Deprecated, but easier to install
+Bundle 'vim-ruby/vim-ruby'
+" Ruby stuff
+Bundle 'tpope/vim-surround'
+" New vim object selection
+
+if has('python')
+    Bundle 'pthrasher/conqueterm-vim'
+    " Emulate shell in vim
+    Bundle 'SirVer/ultisnips'
+    " Boilerplate code
+endif
+
+" Personal plugins that I want to manage on my own
+Bundle 'biskark/vim-ultimate-test-utility'
+Bundle 'biskark/vim-ultimate-colorscheme-utility'
+Bundle 'biskark/vim-ultimate-screensaver-utility'
+" Bundle 'file:///~/.vim/bundle/vim-ultimate-colorscheme-utility'
+" Bundle 'file:///~/.vim/bundle/vim-ultimate-test-utility'
+" Bundle 'file:///~/.vim/bundle/vim-ultimate-screensaver-utility'
+
+
+filetype plugin indent on
+" }}}
+
+" Other Plugin-related Settings ------------------------ " {{{
 let g:neocomplcache_enable_at_startup = 1
 
 set laststatus=2
