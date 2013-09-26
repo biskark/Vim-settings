@@ -119,7 +119,7 @@ augroup END
 
 augroup filetype_cpp
     autocmd!
-    autocmd BufEnter * if &ft==# 'cpp' | silent setlocal tags+=~/.vim/tags/qt4 | endif
+    autocmd BufEnter * if &ft==# 'cpp' | silent setlocal tags+=~/.vim/tags/qt4 | silent setlocal tags+=~/.vim/tags/stl | endif
 augroup END
 
 augroup filetype_vim
@@ -260,6 +260,7 @@ let OmniCPP_ShowAccess = 1
 let OmniCPP_MayCompleteDot = 1
 let OmniCPP_MayCompleteArrow = 1
 let OmniCPP_MayCompleteScope = 1
+let OmniCPP_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 " }}}
 
 " Plugin Key Mappings --------------------- " {{{
