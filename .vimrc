@@ -119,7 +119,8 @@ augroup END
 
 augroup filetype_cpp
     autocmd!
-    autocmd BufEnter * if &ft==# 'cpp' | silent setlocal tags+=~/.vim/tags/qt4 | silent setlocal tags+=~/.vim/tags/stl | endif
+    autocmd BufEnter * if &ft==# 'cpp' | silent setlocal tags+=~/.vim/tags/qt4 | endif
+    autocmd BufEnter * if &ft==# 'cpp' | silent setlocal tags+=~/.vim/tags/stl | endif
 augroup END
 
 augroup filetype_vim
