@@ -246,7 +246,7 @@ let g:pymode_lint_cwindow = 0
 
 " Vim-Ultimate-Colorscheme-Utility
 let g:ulti_color_always_random = 2
-let g:ulti_color_excluded = ['minibufexpl', 'help', 'nerdtree', 'tagbar']
+let g:ulti_color_excluded = ['minibufexpl', 'help', 'nerdtree', 'tagbar', 'qf']
 
 "Syntastic and Qt
 let g:syntastic_auto_loc_list=1
