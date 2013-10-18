@@ -69,13 +69,13 @@ noremap L $
 
 " Append semi-colon to line;
 nnoremap <silent> <leader>ss mqA;<esc>`q
-vnoremap <silent> <leader>ss mq:s/$/;/<cr>`q
+xnoremap <silent> <leader>ss mq:s/$/;/<cr>`q
 " Append colon to line;
 nnoremap <silent> <leader>cc mqA:<esc>`q
-vnoremap <silent> <leader>cc mq:s/$/:/<cr>`q
+xnoremap <silent> <leader>cc mq:s/$/:/<cr>`q
 " Append { to line;
 nnoremap <silent> <leader>{{ mqA {<esc>`q
-vnoremap <silent> <leader>{{ mq:s/$/ {/<cr>`q
+xnoremap <silent> <leader>{{ mq:s/$/ {/<cr>`q
 
 " Match trailing whitespace or turn off match
 nnoremap <leader>w mq :match Error /\v\s+$/<cr>`q
@@ -138,75 +138,73 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
-Bundle 'vim-scripts/a.vim'
 " Switch between header and source
-Bundle 'viklund/bio-vim'
+Bundle 'vim-scripts/a.vim'
 " Fasta etc.. syntax highlighting
+Bundle 'viklund/bio-vim'
 
-Bundle 'noahfrederick/vim-hemisu'
 " Colorscheme
-Bundle 'vim-scripts/javacomplete'
+Bundle 'noahfrederick/vim-hemisu'
 " Omnicomplete for Java
-Bundle 'fholgado/minibufexpl.vim'
+Bundle 'vim-scripts/javacomplete'
 " Buffer menu
-Bundle 'Shougo/neocomplcache.vim'
+Bundle 'fholgado/minibufexpl.vim'
 " Better Completion
-Bundle 'scrooloose/nerdtree'
+Bundle 'Shougo/neocomplcache.vim'
 " Filesystem browser
-Bundle 'vim-scripts/OmniCppComplete'
+Bundle 'scrooloose/nerdtree'
 " Omnicomplete for C++
-Bundle 'fs111/pydoc.vim'
+Bundle 'vim-scripts/OmniCppComplete'
 " Python doc in vim
-Bundle 'klen/python-mode'
+Bundle 'fs111/pydoc.vim'
 " Python code help
-Bundle 'ervandew/supertab'
+Bundle 'klen/python-mode'
 " Tab completion
-Bundle 'scrooloose/syntastic'
+Bundle 'ervandew/supertab'
 " Syntax checking upgrade
-Bundle 'majutsushi/tagbar'
+Bundle 'scrooloose/syntastic'
 " Tag tree
-Bundle 'vim-scripts/tlib'
+Bundle 'majutsushi/tagbar'
 " Utility functions
-Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'vim-scripts/tlib'
 " More Utility functions
-Bundle 'vim-scripts/VimClojure'
+Bundle 'MarcWeber/vim-addon-mw-utils'
 " Clojure filetype stuff
-Bundle 'flazz/vim-colorschemes'
+Bundle 'vim-scripts/VimClojure'
 " Colors!
-Bundle 'tpope/vim-commentary'
+Bundle 'flazz/vim-colorschemes'
 " Easy commenting
-Bundle 'skammer/vim-css-color'
+Bundle 'tpope/vim-commentary'
 " Shows colors from rgb values
-Bundle 'jtratner/vim-flavored-markdown'
+Bundle 'skammer/vim-css-color'
 " Markdown syntax
-Bundle 'tpope/vim-fugitive'
+Bundle 'jtratner/vim-flavored-markdown'
 " Git stuff
-Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-fugitive'
+" Vimrc lint checker
+Bundle 'dbakker/vim-lint'
 " More Markdown
-Bundle 'vim-perl/vim-perl'
+Bundle 'tpope/vim-markdown'
 " Perl stuff
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'vim-perl/vim-perl'
 " Deprecated, but easier to install
-Bundle 'vim-ruby/vim-ruby'
+Bundle 'Lokaltog/vim-powerline'
 " Ruby stuff
-Bundle 'tpope/vim-surround'
+Bundle 'vim-ruby/vim-ruby'
 " New vim object selection
+Bundle 'tpope/vim-surround'
 
 if has('python')
-    Bundle 'pthrasher/conqueterm-vim'
     " Emulate shell in vim
-    Bundle 'SirVer/ultisnips'
+    Bundle 'pthrasher/conqueterm-vim'
     " Boilerplate code
+    Bundle 'SirVer/ultisnips'
 endif
 
-" Personal plugins that I want to manage on my own
+" Personal plugins
 Bundle 'biskark/vim-ultimate-test-utility'
 Bundle 'biskark/vim-ultimate-colorscheme-utility'
 Bundle 'biskark/vim-ultimate-screensaver-utility'
-" Bundle 'file:///~/.vim/bundle/vim-ultimate-colorscheme-utility'
-" Bundle 'file:///~/.vim/bundle/vim-ultimate-test-utility'
-" Bundle 'file:///~/.vim/bundle/vim-ultimate-screensaver-utility'
-
 
 filetype plugin indent on
 " }}}
@@ -254,7 +252,7 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open=1
 let g:syntastic_cpp_include_dirs = ['/usr/include/qt4/', '/usr/include/qt4/QtCore/', '/usr/include/qt4/Qt/', '/usr/include/qt4/QtGui/', '/usr/include/qt4/QtUiTools/']
 let g:syntastic_cpp_check_header = 1
-let g:syntastic_cpp_compiler_options = ' -std=c++0x'
+let g:syntastic_cpp_compiler_options = ' -std=c++0x -Wall -Wextra'
 
 let OmniCPP_NamespaceSearch = 2
 let OmniCPP_GlobalScopeSearch = 1
