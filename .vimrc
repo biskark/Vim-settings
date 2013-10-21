@@ -7,9 +7,9 @@ set nowrap
 set autoindent
 set number
 set smarttab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=3
+set softtabstop=3
+set shiftwidth=3
 set expandtab
 set backspace=indent,eol,start
 set ofu=syntaxcomplete#Complete
