@@ -3,6 +3,7 @@ set guioptions-=T
 set nocompatible
 syntax on
 
+set autoread;
 set nowrap
 set autoindent
 set number
