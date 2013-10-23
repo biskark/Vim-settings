@@ -41,6 +41,10 @@ set scrolloff=2
 
 set wildmenu
 set wildmode=list:longest,full
+
+if has("gui_running")
+    set lines=100 columns = 100
+endif
 " }}}
 
 " Basic Key Mappings -------------------- " {{{
