@@ -3,7 +3,7 @@ set guioptions-=T
 set nocompatible
 syntax on
 
-set autoread;
+set autoread
 set nowrap
 set autoindent
 set number
@@ -43,7 +43,8 @@ set wildmenu
 set wildmode=list:longest,full
 
 if has("gui_running")
-    set lines=100 columns = 100
+    set lines=100
+    set columns=100
 endif
 " }}}
 
