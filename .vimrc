@@ -44,7 +44,7 @@ set wildmode=list:longest,full
 
 if has("gui_running")
     set lines=100
-    set columns=100
+    set columns=180
 endif
 " }}}
 
