@@ -292,4 +292,16 @@ endfunction
 " }}}   
 
 " Other Settings -------------------- " {{{
+cnoremap <silent> virtual<cr> call <SID>VirtualC()<cr>
+
+function! s:VirtualC()
+   let className = expand("<cword>")
+   call append(line('.'), "public:")
+   call append(line('.') + 1, "virtual ~" . className . "() = default;")
+   call append(line('.') + 2, className . "(const ". className . "& other) = default;")
+   call append(line('.') + 3, className . "& operator=(const ". className . "& other) = default;")
+   call append(line('.') + 4, "")
+   call append(line('.') + 5, className . "(" . className . "&&other) = default;")
+   call append(line('.') + 6, className . "& operator=(" . className . "&& other) = default;")
+endfunction
 " }}}   

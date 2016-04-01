@@ -2,7 +2,7 @@ Installation
 ------------
 
 ```bash
-$ git clone https://github.com/biskark/Vim-settings temp/
+$ git clone https://github.com/biskark/Vim-settings.git temp/
 $ mv temp/* .
 $ mv temp/.git* .
 $ mv temp/.vim* .
