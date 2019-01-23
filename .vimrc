@@ -46,10 +46,6 @@ set wildmode=list:longest,full
 noremap ; :
 noremap : ;
 
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
 nnoremap  <C-h> <C-w>h
 nnoremap  <C-j> <C-w>j
 nnoremap  <C-k> <C-w>k
